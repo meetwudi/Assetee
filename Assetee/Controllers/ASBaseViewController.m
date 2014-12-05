@@ -1,19 +1,21 @@
 //
-//  UIViewController+OverlayedActivityIndicator.m
+//  ASBaseViewController.m
 //  Assetee
 //
 //  Created by Wu Di on 12/5/14.
 //  Copyright (c) 2014 吴迪（子回）. All rights reserved.
 //
 
-#import "UIViewController+OverlayedActivityIndicator.h"
+#import "ASBaseViewController.h"
 
+@interface ASBaseViewController ()
+@property (nonatomic) UIView *overlayView;
+@property (nonatomic) UIActivityIndicatorView* activityIndicator;
+@end
 
-@implementation UIViewController (OverlayedActivityIndicator)
+@implementation ASBaseViewController
 
-@dynamic overlayView;
-@dynamic activityIndicator;
-
+#pragma mark - Overlay View
 - (void)addOverlayView {
     self.overlayView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];

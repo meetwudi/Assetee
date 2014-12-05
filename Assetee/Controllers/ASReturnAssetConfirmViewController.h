@@ -1,5 +1,5 @@
 //
-//  ASRentListViewController.h
+//  ASReturnAssetConfirmViewController.h
 //  Assetee
 //
 //  Created by Wu Di on 12/5/14.
@@ -8,7 +8,6 @@
 
 #import "ASBaseViewController.h"
 
-@interface ASRentListViewController : ASBaseViewController 
-
+@interface ASReturnAssetConfirmViewController : ASBaseViewController    
 
 @end

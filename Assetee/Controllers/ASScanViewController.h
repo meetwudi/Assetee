@@ -6,9 +6,9 @@
 //  Copyright (c) 2014 吴迪（子回）. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ASBaseViewController.h"
 
-@interface ASScanViewController : UIViewController {
+@interface ASScanViewController : ASBaseViewController {
     UIImage *_snapshot;
 }
 

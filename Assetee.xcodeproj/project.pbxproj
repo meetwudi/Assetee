@@ -24,7 +24,8 @@
 		6D31E4091A318D0800077A33 /* ASFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4081A318D0800077A33 /* ASFloatLabeledTextField.m */; };
 		6D31E4121A31C1D200077A33 /* ASScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4111A31C1D200077A33 /* ASScanViewController.m */; };
 		6DFBBE971A31C54800848A99 /* ASOperateAssetScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE961A31C54800848A99 /* ASOperateAssetScanViewController.m */; };
-		6DFBBE9A1A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE991A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.m */; };
+		6DFBBE9D1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE9C1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m */; };
+		6DFBBEA01A31D2AF00848A99 /* ASBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE9F1A31D2AF00848A99 /* ASBaseViewController.m */; };
 		C288C28CAC2456F22E79DB49 /* libPods-Assetee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53293E93436F7B2F441F74 /* libPods-Assetee.a */; };
 /* End PBXBuildFile section */
 
@@ -74,8 +75,10 @@
 		6D31E4111A31C1D200077A33 /* ASScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASScanViewController.m; path = Controllers/ASScanViewController.m; sourceTree = "<group>"; };
 		6DFBBE951A31C54800848A99 /* ASOperateAssetScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASOperateAssetScanViewController.h; path = Controllers/ASOperateAssetScanViewController.h; sourceTree = "<group>"; };
 		6DFBBE961A31C54800848A99 /* ASOperateAssetScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASOperateAssetScanViewController.m; path = Controllers/ASOperateAssetScanViewController.m; sourceTree = "<group>"; };
-		6DFBBE981A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+OverlayedActivityIndicator.h"; path = "Controllers/UIViewController+OverlayedActivityIndicator.h"; sourceTree = "<group>"; };
-		6DFBBE991A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+OverlayedActivityIndicator.m"; path = "Controllers/UIViewController+OverlayedActivityIndicator.m"; sourceTree = "<group>"; };
+		6DFBBE9B1A31CD6200848A99 /* ASReturnAssetConfirmViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASReturnAssetConfirmViewController.h; path = Controllers/ASReturnAssetConfirmViewController.h; sourceTree = "<group>"; };
+		6DFBBE9C1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASReturnAssetConfirmViewController.m; path = Controllers/ASReturnAssetConfirmViewController.m; sourceTree = "<group>"; };
+		6DFBBE9E1A31D2AF00848A99 /* ASBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASBaseViewController.h; path = Controllers/ASBaseViewController.h; sourceTree = "<group>"; };
+		6DFBBE9F1A31D2AF00848A99 /* ASBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASBaseViewController.m; path = Controllers/ASBaseViewController.m; sourceTree = "<group>"; };
 		AD53293E93436F7B2F441F74 /* libPods-Assetee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Assetee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -183,12 +186,14 @@
 		6D31E3EF1A315B4700077A33 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6DFBBE981A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.h */,
-				6DFBBE991A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.m */,
+				6DFBBE9E1A31D2AF00848A99 /* ASBaseViewController.h */,
+				6DFBBE9F1A31D2AF00848A99 /* ASBaseViewController.m */,
 				6D31E3F01A315B5C00077A33 /* ASRentListViewController.h */,
 				6D31E3F11A315B5C00077A33 /* ASRentListViewController.m */,
 				6D31E4041A317F8500077A33 /* ASAddAssetFillInfoViewController.h */,
 				6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */,
+				6DFBBE9B1A31CD6200848A99 /* ASReturnAssetConfirmViewController.h */,
+				6DFBBE9C1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m */,
 				6D31E4101A31C1D200077A33 /* ASScanViewController.h */,
 				6D31E4111A31C1D200077A33 /* ASScanViewController.m */,
 				6DFBBE951A31C54800848A99 /* ASOperateAssetScanViewController.h */,
@@ -365,12 +370,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DFBBE9D1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m in Sources */,
 				6D31E4031A31792600077A33 /* ASAddAssetScanViewController.m in Sources */,
 				6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */,
 				6D31E4061A317F8500077A33 /* ASAddAssetFillInfoViewController.m in Sources */,
 				6DFBBE971A31C54800848A99 /* ASOperateAssetScanViewController.m in Sources */,
 				6D31E3F21A315B5C00077A33 /* ASRentListViewController.m in Sources */,
-				6DFBBE9A1A31C9FA00848A99 /* UIViewController+OverlayedActivityIndicator.m in Sources */,
 				6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */,
 				6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */,
 				6D31E3F61A315DFE00077A33 /* ASAssetManager.m in Sources */,
@@ -379,6 +384,7 @@
 				6D31E4121A31C1D200077A33 /* ASScanViewController.m in Sources */,
 				6D31E4091A318D0800077A33 /* ASFloatLabeledTextField.m in Sources */,
 				6D31E3C01A31420C00077A33 /* main.m in Sources */,
+				6DFBBEA01A31D2AF00848A99 /* ASBaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

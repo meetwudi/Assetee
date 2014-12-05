@@ -10,7 +10,6 @@
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "ASAddAssetFillInfoViewController.h"
 #import "ASAssetManager.h"
-#import "UIViewController+OverlayedActivityIndicator.h"
 
 @interface ASAddAssetFillInfoViewController ()
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;

@@ -30,7 +30,7 @@
 }
 
 -(void)didDetectedBarCodeWithId:(NSString *)barCodeId {
-    
+    [self addOverlayView];
 }
 
 
