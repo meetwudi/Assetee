@@ -19,6 +19,8 @@
 		6D31E3F91A31604600077A33 /* AVOSCloudInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3F81A31604600077A33 /* AVOSCloudInitializer.m */; };
 		6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3FC1A316A5B00077A33 /* ASRentListCell.m */; };
 		6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */; };
+		6D31E4031A31792600077A33 /* ASAddAssetScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */; };
+		6D31E4061A317F8500077A33 /* ASAddAssetFillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */; };
 		C288C28CAC2456F22E79DB49 /* libPods-Assetee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53293E93436F7B2F441F74 /* libPods-Assetee.a */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +60,10 @@
 		6D31E3FC1A316A5B00077A33 /* ASRentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASRentListCell.m; path = Views/ASRentListCell.m; sourceTree = "<group>"; };
 		6D31E3FE1A316EAA00077A33 /* ASDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASDateFormatter.h; path = Models/ASDateFormatter.h; sourceTree = "<group>"; };
 		6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASDateFormatter.m; path = Models/ASDateFormatter.m; sourceTree = "<group>"; };
+		6D31E4011A31792600077A33 /* ASAddAssetScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASAddAssetScanViewController.h; path = Controllers/ASAddAssetScanViewController.h; sourceTree = "<group>"; };
+		6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASAddAssetScanViewController.m; path = Controllers/ASAddAssetScanViewController.m; sourceTree = "<group>"; };
+		6D31E4041A317F8500077A33 /* ASAddAssetFillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASAddAssetFillInfoViewController.h; path = Controllers/ASAddAssetFillInfoViewController.h; sourceTree = "<group>"; };
+		6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASAddAssetFillInfoViewController.m; path = Controllers/ASAddAssetFillInfoViewController.m; sourceTree = "<group>"; };
 		AD53293E93436F7B2F441F74 /* libPods-Assetee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Assetee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -167,6 +173,10 @@
 			children = (
 				6D31E3F01A315B5C00077A33 /* ASRentListViewController.h */,
 				6D31E3F11A315B5C00077A33 /* ASRentListViewController.m */,
+				6D31E4011A31792600077A33 /* ASAddAssetScanViewController.h */,
+				6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */,
+				6D31E4041A317F8500077A33 /* ASAddAssetFillInfoViewController.h */,
+				6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -335,7 +345,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6D31E4031A31792600077A33 /* ASAddAssetScanViewController.m in Sources */,
 				6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */,
+				6D31E4061A317F8500077A33 /* ASAddAssetFillInfoViewController.m in Sources */,
 				6D31E3F21A315B5C00077A33 /* ASRentListViewController.m in Sources */,
 				6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */,
 				6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */,
