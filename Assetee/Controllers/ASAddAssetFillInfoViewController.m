@@ -8,6 +8,7 @@
 
 #import "ASAddAssetFillInfoViewController.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "ASAssetManager.h"
 
 @interface ASAddAssetFillInfoViewController ()
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;
@@ -37,6 +38,17 @@
 
 - (IBAction)cancel:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)save:(id)sender {
+    ASAssetManager *assetManager = [ASAssetManager sharedManager];
+    [assetManager createAssetWithName:self.nameInput.text barCodeId:self.barCodeId snapshotImage:self.snapshotImage complete:^(BOOL succeeded, NSError *error) {
+        NSLog(@"OK");
+        if (error) {
+            NSLog(@"%@", error);
+        }
+        [self cancel:self];
+    }];
 }
 
 @end

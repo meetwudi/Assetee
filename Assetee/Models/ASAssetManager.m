@@ -38,4 +38,16 @@
     }];
 }
 
+-(void)createAssetWithName:(NSString *)name barCodeId:(NSString *)barCodeId snapshotImage:(UIImage *)snapshotImage complete:(void (^)(BOOL succeeded, NSError *error))complete {
+    AVObject *asset = [AVObject objectWithClassName:@"Asset"];
+    [asset setObject:name forKey:@"name"];
+    [asset setObject:barCodeId forKey:@"barCodeId"];
+    NSData *snapshotData = UIImagePNGRepresentation(snapshotImage);
+    AVFile *snapshot = [AVFile fileWithData:snapshotData];
+    [asset setObject:snapshot forKey:@"snapshot"];
+    // 临时的
+    [asset setObject:@YES forKey:@"rented"];
+    [asset saveInBackgroundWithBlock:complete];
+}
+
 @end

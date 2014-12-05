@@ -144,7 +144,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="WdL-Xw-vYk" kind="push" identifier="Asset Information" id="BPW-nL-AbL"/>
+                        <segue destination="WdL-Xw-vYk" kind="show" identifier="Asset Information" id="BPW-nL-AbL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bKJ-r9-ebb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -184,7 +184,7 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xgq-TK-VpD"/>
                     </navigationItem>
                     <connections>
-                        <segue destination="KND-ac-p7e" kind="push" id="gBk-Iv-FOa"/>
+                        <segue destination="KND-ac-p7e" kind="show" identifier="Renter Information" id="gBk-Iv-FOa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhd-GR-aOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +246,11 @@
                                 <action selector="cancel:" destination="WdL-Xw-vYk" id="NGk-Z0-7ek"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9GF-em-q0j"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9GF-em-q0j">
+                            <connections>
+                                <action selector="save:" destination="WdL-Xw-vYk" id="Rro-FM-wy8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="nameInput" destination="kAW-mu-DtG" id="d0R-nJ-qcV"/>

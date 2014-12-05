@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+@class UIImage;
+
 @interface ASAssetManager : NSObject
 
 + (instancetype) sharedManager;
 - (void) fetchRentItemsWithComplete:(void(^)(NSArray *items))complete;
+- (void) createAssetWithName:(NSString*)name barCodeId:(NSString*)barCodeId snapshotImage:(UIImage*)snapshotImage complete:(void(^)(BOOL succeeded, NSError *error))complete;
 
 @end

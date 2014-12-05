@@ -11,15 +11,16 @@
 #import "ASAddAssetFillInfoViewController.h"
 
 
-@interface ASAddAssetScanViewController () <AVCaptureMetadataOutputObjectsDelegate> {
+@interface ASAddAssetScanViewController () <AVCaptureMetadataOutputObjectsDelegate, AVCaptureVideoDataOutputSampleBufferDelegate> {
     AVCaptureSession *_session;
     AVCaptureDevice *_device;
     AVCaptureDeviceInput *_input;
-    AVCaptureMetadataOutput *_output;
+    AVCaptureMetadataOutput *_metadataOutput;
     AVCaptureVideoPreviewLayer *_prevLayer;
     UIView *_highlightView;
+    UIImage *_snapshot;
+    NSString *_barCodeId;
 }
-@property (nonatomic) NSString *barCodeId;
 @end
 
 @implementation ASAddAssetScanViewController
@@ -52,9 +53,10 @@
     
     // actually setting up capture session
     _session = [[AVCaptureSession alloc] init];
+    
+    // video input
     _device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
     NSError *error = nil;
-    
     _input = [AVCaptureDeviceInput deviceInputWithDevice:_device error:&error];
     if (_input) {
         [_session addInput:_input];
@@ -62,11 +64,26 @@
         NSLog(@"Error: %@", error);
     }
     
-    _output = [[AVCaptureMetadataOutput alloc] init];
-    [_output setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
-    [_session addOutput:_output];
-    _output.metadataObjectTypes = [_output availableMetadataObjectTypes];
+    // metadata capture output
+    _metadataOutput = [[AVCaptureMetadataOutput alloc] init];
+    [_metadataOutput setMetadataObjectsDelegate:self queue:dispatch_get_main_queue()];
+    [_session addOutput:_metadataOutput];
+    _metadataOutput.metadataObjectTypes = [_metadataOutput availableMetadataObjectTypes];
     
+    // video stream output
+    AVCaptureVideoDataOutput *output = [[AVCaptureVideoDataOutput alloc] init];
+    [_session addOutput:output];
+    
+    dispatch_queue_t queue = dispatch_queue_create("videoStreamQueue", NULL);
+    [output setSampleBufferDelegate:self queue:queue];
+    
+    output.videoSettings =
+    [NSDictionary dictionaryWithObject:
+     [NSNumber numberWithInt:kCVPixelFormatType_32BGRA]
+                                forKey:(id)kCVPixelBufferPixelFormatTypeKey];
+    
+    
+    // setup preview layer for session
     _prevLayer = [AVCaptureVideoPreviewLayer layerWithSession:_session];
     _prevLayer.frame = self.view.bounds;
     _prevLayer.videoGravity = AVLayerVideoGravityResizeAspectFill;
@@ -75,6 +92,10 @@
     [_session startRunning];
     
     [self.view bringSubviewToFront:_highlightView];
+}
+
+- (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer fromConnection:(AVCaptureConnection *)connection {
+    _snapshot = [self imageFromSampleBuffer:sampleBuffer];
 }
 
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
@@ -99,23 +120,52 @@
         }
     }
     _highlightView.frame = highlightViewRect;
-    
-    self.barCodeId = detectionString;
+    _barCodeId = detectionString;
     [self performSegueWithIdentifier:@"Asset Information" sender:self];
     [_session stopRunning];
 }
 
-- (UIImage *)imageFromLayer:(CALayer *)layer
+// Create a UIImage from sample buffer data
+- (UIImage *) imageFromSampleBuffer:(CMSampleBufferRef) sampleBuffer
 {
-    UIGraphicsBeginImageContext([layer frame].size);
+    // Get a CMSampleBuffer's Core Video image buffer for the media data
+    CVImageBufferRef imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer);
+    // Lock the base address of the pixel buffer
+    CVPixelBufferLockBaseAddress(imageBuffer, 0);
     
-    [layer renderInContext:UIGraphicsGetCurrentContext()];
-    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    // Get the number of bytes per row for the pixel buffer
+    void *baseAddress = CVPixelBufferGetBaseAddress(imageBuffer);
     
-    UIGraphicsEndImageContext();
+    // Get the number of bytes per row for the pixel buffer
+    size_t bytesPerRow = CVPixelBufferGetBytesPerRow(imageBuffer);
+    // Get the pixel buffer width and height
+    size_t width = CVPixelBufferGetWidth(imageBuffer);
+    size_t height = CVPixelBufferGetHeight(imageBuffer);
     
-    return outputImage;
+    // Create a device-dependent RGB color space
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    // Create a bitmap graphics context with the sample buffer data
+    CGContextRef context = CGBitmapContextCreate(baseAddress, width, height, 8,
+                                                 bytesPerRow, colorSpace, kCGBitmapByteOrder32Little | kCGImageAlphaPremultipliedFirst);
+    // Create a Quartz image from the pixel data in the bitmap graphics context
+    CGImageRef quartzImage = CGBitmapContextCreateImage(context);
+    // Unlock the pixel buffer
+    CVPixelBufferUnlockBaseAddress(imageBuffer,0);
+    
+    // Free up the context and color space
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSpace);
+    
+    // Create an image object from the Quartz image
+    UIImage *image = [UIImage imageWithCGImage:quartzImage];
+    
+    // Release the Quartz image
+    CGImageRelease(quartzImage);
+    
+    return (image);
 }
+
 
 #pragma mark - others
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -123,9 +173,10 @@
         if ([segue.destinationViewController isKindOfClass:[ASAddAssetFillInfoViewController class]]) {
             // Fill Info
             ASAddAssetFillInfoViewController *destination = (ASAddAssetFillInfoViewController*)segue.destinationViewController;
-            destination.barCodeId = self.barCodeId;
+            destination.barCodeId = _barCodeId;
             // Get preview layer image data
-            destination.snapshotImage = [self imageFromLayer:_prevLayer];
+            destination.snapshotImage = _snapshot;
+
         }
     }
 }
