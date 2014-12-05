@@ -45,6 +45,7 @@
 - (IBAction)confirmReturn:(id)sender {
     [self addOverlayView];
     [self.asset setObject:@NO forKey:@"rented"];
+    [self.asset setObject:[NSDate date] forKey:@"rentDate"];
     [self.asset saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             [self showAlertWithMessage:@"资产归还成功"];

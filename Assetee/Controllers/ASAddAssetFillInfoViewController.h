@@ -11,4 +11,5 @@
 @interface ASAddAssetFillInfoViewController : ASBaseViewController  
 @property (nonatomic) UIImage *snapshotImage;
 @property (nonatomic) NSString *barCodeId;
+@property (nonatomic) BOOL exists;
 @end

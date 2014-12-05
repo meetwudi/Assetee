@@ -48,7 +48,6 @@
             destination.barCodeId = _barCodeId;
             // Get preview layer image data
             destination.snapshotImage = _snapshot;
-
         }
     }
 }

@@ -309,8 +309,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您即将归还上述资产，请确认个人信息准确" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-Pb-ulh">
-                                <rect key="frame" x="165.5" y="245" width="270" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您即将归还上述资产，请确认个人信息准确" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-Pb-ulh">
+                                <rect key="frame" x="16" y="245" width="568" height="17"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="270" id="AQl-ZB-OVu"/>
                                     <constraint firstAttribute="height" constant="21" id="AoB-2A-Fur"/>
@@ -322,6 +322,8 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="AQl-ZB-OVu"/>
+                                        <exclude reference="AoB-2A-Fur"/>
                                         <exclude reference="bJJ-Gs-u1h"/>
                                         <exclude reference="x9Y-L6-V1Y"/>
                                     </mask>
@@ -338,7 +340,9 @@
                             <constraint firstItem="zLB-c9-yUR" firstAttribute="top" secondItem="LrZ-9h-m6H" secondAttribute="bottom" constant="16" id="DhY-jd-6Ix"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="MRn-Zx-cJl"/>
                             <constraint firstItem="Xn1-Pb-ulh" firstAttribute="top" secondItem="zLB-c9-yUR" secondAttribute="bottom" constant="43" id="SPi-KY-gAV"/>
+                            <constraint firstItem="Xn1-Pb-ulh" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="UeJ-tc-AeB"/>
                             <constraint firstItem="LrZ-9h-m6H" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="WkX-UF-8Du"/>
+                            <constraint firstItem="Xn1-Pb-ulh" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="eXg-3T-yVF"/>
                             <constraint firstItem="zLB-c9-yUR" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="q8S-fw-mXW"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="top" secondItem="qhV-np-9lV" secondAttribute="bottom" constant="16" id="tsf-eH-6rL"/>
                         </constraints>
@@ -382,13 +386,43 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您即将归还上述资产，请确认个人信息准确" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyK-es-7oO">
+                                <rect key="frame" x="16" y="153" width="568" height="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="323" id="644-fi-fg8"/>
+                                    <constraint firstAttribute="width" constant="270" id="7O3-Gk-jp8"/>
+                                    <constraint firstAttribute="height" constant="21" id="cKY-pd-vYY"/>
+                                    <constraint firstAttribute="height" constant="21" id="kWS-B9-b6f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.066666666669999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7O3-Gk-jp8"/>
+                                        <exclude reference="cKY-pd-vYY"/>
+                                        <exclude reference="kWS-B9-b6f"/>
+                                        <exclude reference="644-fi-fg8"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="kAW-mu-DtG" secondAttribute="trailing" id="3ai-F5-bTD"/>
+                            <constraint firstItem="kyK-es-7oO" firstAttribute="leading" secondItem="zca-4M-sha" secondAttribute="leadingMargin" id="GTe-X4-8Sk"/>
                             <constraint firstItem="kAW-mu-DtG" firstAttribute="leading" secondItem="zca-4M-sha" secondAttribute="leadingMargin" id="Pyw-i9-vtE"/>
+                            <constraint firstItem="kyK-es-7oO" firstAttribute="top" secondItem="kAW-mu-DtG" secondAttribute="bottom" constant="43" id="Zgn-Xy-F79"/>
+                            <constraint firstItem="kyK-es-7oO" firstAttribute="trailing" secondItem="zca-4M-sha" secondAttribute="trailingMargin" id="byX-Lx-Ke6"/>
+                            <constraint firstItem="kyK-es-7oO" firstAttribute="width" secondItem="zca-4M-sha" secondAttribute="width" id="i1F-73-Mqu"/>
+                            <constraint firstAttribute="centerX" secondItem="kyK-es-7oO" secondAttribute="centerX" id="nOj-2g-wIE"/>
                             <constraint firstItem="kAW-mu-DtG" firstAttribute="top" secondItem="xdh-jM-RpG" secondAttribute="bottom" constant="16" id="tOz-9h-XQZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="i1F-73-Mqu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="资产入库" id="icZ-KZ-tOH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cbY-ka-R8I">
@@ -403,6 +437,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="informLabel" destination="kyK-es-7oO" id="lpT-sM-Vjj"/>
                         <outlet property="nameInput" destination="kAW-mu-DtG" id="d0R-nJ-qcV"/>
                     </connections>
                 </viewController>

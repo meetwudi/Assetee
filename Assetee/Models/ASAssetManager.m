@@ -38,7 +38,24 @@
     }];
 }
 
--(void)createAssetWithName:(NSString *)name barCodeId:(NSString *)barCodeId snapshotImage:(UIImage *)snapshotImage complete:(void (^)(BOOL succeeded, NSError *error))complete {
+-(void)createAssetWithName:(NSString *)name barCodeId:(NSString *)barCodeId
+             snapshotImage:(UIImage *)snapshotImage
+                  complete:(void (^)(BOOL succeeded, NSError *error))complete {
+    [self getAssetWithBarCodeId:barCodeId complete:^(ASAssetState state, AVObject *asset) {
+        if (state != ASAssetStateNotFound) {
+            [asset deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                [self _createAssetWithName:name barCodeId:barCodeId snapshotImage:snapshotImage complete:complete];
+            }];
+        }
+        else {
+            [self _createAssetWithName:name barCodeId:barCodeId snapshotImage:snapshotImage complete:complete];
+        }
+    }];
+}
+
+-(void)_createAssetWithName:(NSString *)name barCodeId:(NSString *)barCodeId
+             snapshotImage:(UIImage *)snapshotImage
+                   complete:(void (^)(BOOL succeeded, NSError *error))complete {
     AVObject *asset = [AVObject objectWithClassName:@"Asset"];
     [asset setObject:name forKey:@"name"];
     [asset setObject:barCodeId forKey:@"barCodeId"];

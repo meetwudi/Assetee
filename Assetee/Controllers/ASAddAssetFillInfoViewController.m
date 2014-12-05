@@ -13,6 +13,7 @@
 
 @interface ASAddAssetFillInfoViewController ()
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;
+@property (weak, nonatomic) IBOutlet UILabel *informLabel;
 @property (nonatomic) UIView *overlayView;
 @property (nonatomic) UIActivityIndicatorView *activityIndicator;
 
@@ -22,15 +23,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self setupNameInput];
+    [self setupViews];
 }
 
-- (void)setupNameInput {
+- (void)setupViews {
+    // Setup nameInput
     UIColor *floatLabelColor = [UIColor colorWithRed:0 green:145.0/255.0 blue:1.0 alpha:1];
     
     self.nameInput.floatingLabelTextColor = floatLabelColor;
     self.nameInput.floatingLabelYPadding = -2.0;
     [self.nameInput setPlaceholder:@"资产名称"];
+    
+    // If the asset exists, let user know about it
+    __weak ASAddAssetFillInfoViewController *weakSelf = self;
+    [[ASAssetManager sharedManager] getAssetWithBarCodeId:self.barCodeId complete:^(ASAssetState state, AVObject *asset) {
+        if (state != ASAssetStateNotFound) {
+            // the assets exists
+            weakSelf.informLabel.text = @"该资产曾经入库过，本次入库保存后将删除原有入库记录";
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +49,13 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Getter & Setter
+-(BOOL)exists {
+    if (!_exists) {
+        _exists = NO;
+    }
+    return _exists;
+}
 
 #pragma mark - View events
 
@@ -52,9 +70,6 @@
     // dismiss keyboard
     [self.view endEditing:YES];
     
-    [assetManager getAssetWithBarCodeId:self.barCodeId complete:^(ASAssetState state, AVObject *asset) {
-        
-    }];
     [assetManager createAssetWithName:self.nameInput.text barCodeId:self.barCodeId snapshotImage:self.snapshotImage complete:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"%@", error);
