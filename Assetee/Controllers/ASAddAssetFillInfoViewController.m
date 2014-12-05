@@ -6,10 +6,11 @@
 //  Copyright (c) 2014 吴迪（子回）. All rights reserved.
 //
 
-#import "ASAddAssetFillInfoViewController.h"
-#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
-#import "ASAssetManager.h"
 #import <UIKit/UIKit.h>
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
+#import "ASAddAssetFillInfoViewController.h"
+#import "ASAssetManager.h"
+#import "UIViewController+OverlayedActivityIndicator.h"
 
 @interface ASAddAssetFillInfoViewController ()
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;
@@ -37,19 +38,6 @@
 }
 
 #pragma mark - Views
-- (void)addOverlayView {
-    self.overlayView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    self.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
-    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    self.activityIndicator.center = self.overlayView.center;
-    [self.overlayView addSubview:self.activityIndicator];
-    [self.activityIndicator startAnimating];
-    [self.navigationController.view addSubview:self.overlayView];
-}
-
-- (void)removeOverlayView {
-    [self.overlayView removeFromSuperview];
-}
 
 - (void)showAlertWithMessage:(NSString*)message {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Assetee" message:message delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
@@ -66,10 +54,11 @@
     
     ASAssetManager *assetManager = [ASAssetManager sharedManager];
     [self addOverlayView];
+    // dismiss keyboard
     [self.view endEditing:YES];
     [assetManager createAssetWithName:self.nameInput.text barCodeId:self.barCodeId snapshotImage:self.snapshotImage complete:^(BOOL succeeded, NSError *error) {
-        NSLog(@"OK");
         if (error) {
+            NSLog(@"%@", error);
             [self showAlertWithMessage:@"由于未知原因，资产入库失败，请重试或者联系管理员"];
         }
         else {
