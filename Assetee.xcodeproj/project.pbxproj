@@ -14,6 +14,7 @@
 		6D31E3CB1A31420C00077A33 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6D31E3CA1A31420C00077A33 /* Images.xcassets */; };
 		6D31E3CE1A31420C00077A33 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6D31E3CC1A31420C00077A33 /* LaunchScreen.xib */; };
 		6D31E3DA1A31420C00077A33 /* AsseteeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3D91A31420C00077A33 /* AsseteeTests.m */; };
+		6D31E3E71A314BC300077A33 /* UINavigationBarCustomizeInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3E61A314BC300077A33 /* UINavigationBarCustomizeInitializer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		6D31E3D31A31420C00077A33 /* AsseteeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsseteeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6D31E3D81A31420C00077A33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6D31E3D91A31420C00077A33 /* AsseteeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsseteeTests.m; sourceTree = "<group>"; };
+		6D31E3E51A314BC300077A33 /* UINavigationBarCustomizeInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UINavigationBarCustomizeInitializer.h; path = Initializers/UINavigationBarCustomizeInitializer.h; sourceTree = "<group>"; };
+		6D31E3E61A314BC300077A33 /* UINavigationBarCustomizeInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINavigationBarCustomizeInitializer.m; path = Initializers/UINavigationBarCustomizeInitializer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,7 @@
 		6D31E3BC1A31420C00077A33 /* Assetee */ = {
 			isa = PBXGroup;
 			children = (
+				6D31E3E41A314B8700077A33 /* Initializers */,
 				6D31E3C41A31420C00077A33 /* ViewController.h */,
 				6D31E3C51A31420C00077A33 /* ViewController.m */,
 				6D31E3C71A31420C00077A33 /* Main.storyboard */,
@@ -117,6 +121,15 @@
 				6D31E3D81A31420C00077A33 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6D31E3E41A314B8700077A33 /* Initializers */ = {
+			isa = PBXGroup;
+			children = (
+				6D31E3E51A314BC300077A33 /* UINavigationBarCustomizeInitializer.h */,
+				6D31E3E61A314BC300077A33 /* UINavigationBarCustomizeInitializer.m */,
+			);
+			name = Initializers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +234,7 @@
 			files = (
 				6D31E3C61A31420C00077A33 /* ViewController.m in Sources */,
 				6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */,
+				6D31E3E71A314BC300077A33 /* UINavigationBarCustomizeInitializer.m in Sources */,
 				6D31E3C01A31420C00077A33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
