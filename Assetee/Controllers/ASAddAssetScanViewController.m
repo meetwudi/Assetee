@@ -44,6 +44,9 @@
 
 #pragma scanner
 -(void) setupScanner {
+    // show prompt
+    self.navigationItem.prompt = @"将摄像头对准条形码";
+    
     // setup highlightView to indicate barcode on the output
     _highlightView = [[UIView alloc] init];
     _highlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin|UIViewAutoresizingFlexibleBottomMargin;

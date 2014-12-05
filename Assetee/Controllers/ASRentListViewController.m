@@ -14,6 +14,7 @@
 
 @interface ASRentListViewController () <UITableViewDelegate, UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) NSArray *rentItems;
 @end
 
@@ -54,11 +55,14 @@
 #pragma mark - Data
 
 - (void) reloadData {
+    // Show activity indicator
+    [self.activityIndicator startAnimating];
     // Fetch rentItems from server
     __weak ASRentListViewController *weakSelf = self;
     ASAssetManager *rentItemsManager = [ASAssetManager sharedManager];
     [rentItemsManager fetchRentItemsWithComplete:^(NSArray *items) {
         weakSelf.rentItems = items;
+        [weakSelf.activityIndicator stopAnimating];
     }];
 }
 

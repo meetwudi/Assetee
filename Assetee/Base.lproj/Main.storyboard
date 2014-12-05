@@ -78,6 +78,13 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="1d9-CS-6x2"/>
                                 </connections>
                             </tableView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="zH3-cF-nFy">
+                                <rect key="frame" x="289" y="289" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="P2S-F0-GBX"/>
+                                    <constraint firstAttribute="height" constant="20" id="vql-0K-GVi"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -85,6 +92,8 @@
                             <constraint firstAttribute="bottomMargin" secondItem="4k5-lb-vuJ" secondAttribute="bottom" id="RDa-yj-a8y"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4k5-lb-vuJ" secondAttribute="trailing" constant="-16" id="T3w-99-JgT"/>
                             <constraint firstItem="4k5-lb-vuJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Xaj-x8-KL2"/>
+                            <constraint firstAttribute="centerX" secondItem="zH3-cF-nFy" secondAttribute="centerX" constant="1" id="fy9-eX-Uvo"/>
+                            <constraint firstAttribute="centerY" secondItem="zH3-cF-nFy" secondAttribute="centerY" constant="1" id="vAH-QR-iWx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Assetee" id="nyU-2u-MHZ">
@@ -100,6 +109,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="zH3-cF-nFy" id="3Kd-U6-itU"/>
                         <outlet property="tableView" destination="4k5-lb-vuJ" id="HSx-2V-TY8"/>
                     </connections>
                 </viewController>
