@@ -51,6 +51,11 @@
     [self.overlayView removeFromSuperview];
 }
 
+- (void)showAlertWithMessage:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Assetee" message:message delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alert show];
+}
+
 #pragma mark - View events
 
 - (IBAction)cancel:(id)sender {
@@ -65,11 +70,15 @@
     [assetManager createAssetWithName:self.nameInput.text barCodeId:self.barCodeId snapshotImage:self.snapshotImage complete:^(BOOL succeeded, NSError *error) {
         NSLog(@"OK");
         if (error) {
-            NSLog(@"%@", error);
+            [self showAlertWithMessage:@"由于未知原因，资产入库失败，请重试或者联系管理员"];
+        }
+        else {
+            [self showAlertWithMessage:@"资产入库成功"];
         }
         [self removeOverlayView];
         [self cancel:self];
     }];
 }
+
 
 @end
