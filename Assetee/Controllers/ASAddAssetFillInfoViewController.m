@@ -9,10 +9,12 @@
 #import "ASAddAssetFillInfoViewController.h"
 #import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 #import "ASAssetManager.h"
+#import <UIKit/UIKit.h>
 
 @interface ASAddAssetFillInfoViewController ()
 @property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;
-
+@property (nonatomic) UIView *overlayView;
+@property (nonatomic) UIActivityIndicatorView *activityIndicator;
 
 @end
 
@@ -34,6 +36,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Views
+- (void)addOverlayView {
+    self.overlayView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.overlayView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    self.activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    self.activityIndicator.center = self.overlayView.center;
+    [self.overlayView addSubview:self.activityIndicator];
+    [self.activityIndicator startAnimating];
+    [self.navigationController.view addSubview:self.overlayView];
+}
+
+- (void)removeOverlayView {
+    [self.overlayView removeFromSuperview];
+}
+
 #pragma mark - View events
 
 - (IBAction)cancel:(id)sender {
@@ -41,12 +58,16 @@
 }
 
 - (IBAction)save:(id)sender {
+    
     ASAssetManager *assetManager = [ASAssetManager sharedManager];
+    [self addOverlayView];
+    [self.view endEditing:YES];
     [assetManager createAssetWithName:self.nameInput.text barCodeId:self.barCodeId snapshotImage:self.snapshotImage complete:^(BOOL succeeded, NSError *error) {
         NSLog(@"OK");
         if (error) {
             NSLog(@"%@", error);
         }
+        [self removeOverlayView];
         [self cancel:self];
     }];
 }
