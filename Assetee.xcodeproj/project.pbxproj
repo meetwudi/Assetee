@@ -26,6 +26,7 @@
 		6DFBBE971A31C54800848A99 /* ASOperateAssetScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE961A31C54800848A99 /* ASOperateAssetScanViewController.m */; };
 		6DFBBE9D1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE9C1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m */; };
 		6DFBBEA01A31D2AF00848A99 /* ASBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBE9F1A31D2AF00848A99 /* ASBaseViewController.m */; };
+		6DFBBEA81A31D8E400848A99 /* ASRentAssetFillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6DFBBEA71A31D8E400848A99 /* ASRentAssetFillInfoViewController.m */; };
 		C288C28CAC2456F22E79DB49 /* libPods-Assetee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53293E93436F7B2F441F74 /* libPods-Assetee.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,8 @@
 		6DFBBE9C1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASReturnAssetConfirmViewController.m; path = Controllers/ASReturnAssetConfirmViewController.m; sourceTree = "<group>"; };
 		6DFBBE9E1A31D2AF00848A99 /* ASBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASBaseViewController.h; path = Controllers/ASBaseViewController.h; sourceTree = "<group>"; };
 		6DFBBE9F1A31D2AF00848A99 /* ASBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASBaseViewController.m; path = Controllers/ASBaseViewController.m; sourceTree = "<group>"; };
+		6DFBBEA61A31D8E400848A99 /* ASRentAssetFillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASRentAssetFillInfoViewController.h; path = Controllers/ASRentAssetFillInfoViewController.h; sourceTree = "<group>"; };
+		6DFBBEA71A31D8E400848A99 /* ASRentAssetFillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASRentAssetFillInfoViewController.m; path = Controllers/ASRentAssetFillInfoViewController.m; sourceTree = "<group>"; };
 		AD53293E93436F7B2F441F74 /* libPods-Assetee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Assetee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -192,14 +195,11 @@
 				6D31E3F11A315B5C00077A33 /* ASRentListViewController.m */,
 				6D31E4041A317F8500077A33 /* ASAddAssetFillInfoViewController.h */,
 				6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */,
+				6DFBBEA61A31D8E400848A99 /* ASRentAssetFillInfoViewController.h */,
+				6DFBBEA71A31D8E400848A99 /* ASRentAssetFillInfoViewController.m */,
 				6DFBBE9B1A31CD6200848A99 /* ASReturnAssetConfirmViewController.h */,
 				6DFBBE9C1A31CD6200848A99 /* ASReturnAssetConfirmViewController.m */,
-				6D31E4101A31C1D200077A33 /* ASScanViewController.h */,
-				6D31E4111A31C1D200077A33 /* ASScanViewController.m */,
-				6DFBBE951A31C54800848A99 /* ASOperateAssetScanViewController.h */,
-				6DFBBE961A31C54800848A99 /* ASOperateAssetScanViewController.m */,
-				6D31E4011A31792600077A33 /* ASAddAssetScanViewController.h */,
-				6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */,
+				6DFBBEA51A31D3ED00848A99 /* ASScan */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +224,19 @@
 				6D31E4081A318D0800077A33 /* ASFloatLabeledTextField.m */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		6DFBBEA51A31D3ED00848A99 /* ASScan */ = {
+			isa = PBXGroup;
+			children = (
+				6D31E4101A31C1D200077A33 /* ASScanViewController.h */,
+				6D31E4111A31C1D200077A33 /* ASScanViewController.m */,
+				6DFBBE951A31C54800848A99 /* ASOperateAssetScanViewController.h */,
+				6DFBBE961A31C54800848A99 /* ASOperateAssetScanViewController.m */,
+				6D31E4011A31792600077A33 /* ASAddAssetScanViewController.h */,
+				6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */,
+			);
+			name = ASScan;
 			sourceTree = "<group>";
 		};
 		7AAD5840FC5BFDDE4AC33A06 /* Pods */ = {
@@ -375,6 +388,7 @@
 				6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */,
 				6D31E4061A317F8500077A33 /* ASAddAssetFillInfoViewController.m in Sources */,
 				6DFBBE971A31C54800848A99 /* ASOperateAssetScanViewController.m in Sources */,
+				6DFBBEA81A31D8E400848A99 /* ASRentAssetFillInfoViewController.m in Sources */,
 				6D31E3F21A315B5C00077A33 /* ASRentListViewController.m in Sources */,
 				6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */,
 				6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */,

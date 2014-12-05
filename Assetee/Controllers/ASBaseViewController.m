@@ -30,4 +30,10 @@
     [self.overlayView removeFromSuperview];
 }
 
+#pragma mark - UIAlertView related
+- (void)showAlertWithMessage:(NSString*)message {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Assetee" message:message delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
+    [alert show];
+}
+
 @end

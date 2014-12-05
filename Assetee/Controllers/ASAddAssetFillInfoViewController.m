@@ -26,7 +26,9 @@
 }
 
 - (void)setupNameInput {
-    self.nameInput.floatingLabelTextColor = [UIColor blackColor];
+    UIColor *floatLabelColor = [UIColor colorWithRed:0 green:145.0/255.0 blue:1.0 alpha:1];
+    
+    self.nameInput.floatingLabelTextColor = floatLabelColor;
     self.nameInput.floatingLabelYPadding = -2.0;
     [self.nameInput setPlaceholder:@"资产名称"];
 }
@@ -36,12 +38,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Views
-
-- (void)showAlertWithMessage:(NSString*)message {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Assetee" message:message delegate:self cancelButtonTitle:@"确认" otherButtonTitles:nil];
-    [alert show];
-}
 
 #pragma mark - View events
 

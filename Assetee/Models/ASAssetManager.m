@@ -50,4 +50,25 @@
     [asset saveInBackgroundWithBlock:complete];
 }
 
+- (void) getAssetWithBarCodeId:(NSString*)barCodeId
+                           complete:(void(^)(ASAssetState state, AVObject *asset))complete {
+    AVQuery *query = [AVQuery queryWithClassName:@"Asset"];
+    [query whereKey:@"barCodeId" equalTo:barCodeId];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if ([objects count] == 0) {
+            complete(ASAssetStateNotFound, nil);
+            return;
+        }
+        AVObject *asset = [objects objectAtIndex:0];
+        BOOL rented = [asset valueForKey:@"rented"];
+        if (rented) {
+            complete(ASAssetStateRented, asset);
+        }
+        else {
+            complete(ASAssetStateNotRented, asset);
+        }
+    }];
+}
+
+
 @end

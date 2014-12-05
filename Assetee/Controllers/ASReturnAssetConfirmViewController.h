@@ -8,6 +8,8 @@
 
 #import "ASBaseViewController.h"
 
-@interface ASReturnAssetConfirmViewController : ASBaseViewController    
+@class AVObject;
 
+@interface ASReturnAssetConfirmViewController : ASBaseViewController    
+@property (nonatomic) AVObject *asset;
 @end

@@ -13,4 +13,6 @@
 - (void)addOverlayView;
 - (void)removeOverlayView;
 
+- (void)showAlertWithMessage:(NSString*)message;
+
 @end

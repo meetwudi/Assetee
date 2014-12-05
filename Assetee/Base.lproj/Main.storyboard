@@ -209,7 +209,7 @@
         <!--资产借出-->
         <scene sceneID="Mb9-9L-YVj">
             <objects>
-                <viewController id="KND-ac-p7e" sceneMemberID="viewController">
+                <viewController id="KND-ac-p7e" customClass="ASRentAssetFillInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVF-ql-zqL"/>
                         <viewControllerLayoutGuide type="bottom" id="hEp-RG-Fro"/>
@@ -247,11 +247,33 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LrZ-9h-m6H" customClass="ASFloatLabeledTextField">
+                                <rect key="frame" x="16" y="126" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DZY-Kn-eBu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zLB-c9-yUR" customClass="ASFloatLabeledTextField">
+                                <rect key="frame" x="16" y="172" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="PAP-mK-ZXf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="zLB-c9-yUR" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="3c0-L2-yYc"/>
+                            <constraint firstItem="LrZ-9h-m6H" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="61r-nn-2Vo"/>
+                            <constraint firstItem="LrZ-9h-m6H" firstAttribute="top" secondItem="KQc-1M-aQi" secondAttribute="bottom" constant="16" id="7yR-80-avv"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="88G-mn-dz1"/>
+                            <constraint firstItem="zLB-c9-yUR" firstAttribute="top" secondItem="LrZ-9h-m6H" secondAttribute="bottom" constant="16" id="DhY-jd-6Ix"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="MRn-Zx-cJl"/>
+                            <constraint firstItem="LrZ-9h-m6H" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="WkX-UF-8Du"/>
+                            <constraint firstItem="zLB-c9-yUR" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="q8S-fw-mXW"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="top" secondItem="qhV-np-9lV" secondAttribute="bottom" constant="16" id="tsf-eH-6rL"/>
                         </constraints>
                     </view>
@@ -260,6 +282,11 @@
                         <barButtonItem key="rightBarButtonItem" title="确认归还" id="waI-IP-QXN"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="nameInput" destination="KQc-1M-aQi" id="AxL-dk-8th"/>
+                        <outlet property="renterNameInput" destination="LrZ-9h-m6H" id="H5g-p4-qHB"/>
+                        <outlet property="renterPhoneInput" destination="zLB-c9-yUR" id="WUM-MB-rUt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWz-Vc-eCp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
