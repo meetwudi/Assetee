@@ -21,6 +21,7 @@
 		6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */; };
 		6D31E4031A31792600077A33 /* ASAddAssetScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */; };
 		6D31E4061A317F8500077A33 /* ASAddAssetFillInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */; };
+		6D31E4091A318D0800077A33 /* ASFloatLabeledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E4081A318D0800077A33 /* ASFloatLabeledTextField.m */; };
 		C288C28CAC2456F22E79DB49 /* libPods-Assetee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53293E93436F7B2F441F74 /* libPods-Assetee.a */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,8 @@
 		6D31E4021A31792600077A33 /* ASAddAssetScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASAddAssetScanViewController.m; path = Controllers/ASAddAssetScanViewController.m; sourceTree = "<group>"; };
 		6D31E4041A317F8500077A33 /* ASAddAssetFillInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASAddAssetFillInfoViewController.h; path = Controllers/ASAddAssetFillInfoViewController.h; sourceTree = "<group>"; };
 		6D31E4051A317F8500077A33 /* ASAddAssetFillInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASAddAssetFillInfoViewController.m; path = Controllers/ASAddAssetFillInfoViewController.m; sourceTree = "<group>"; };
+		6D31E4071A318D0800077A33 /* ASFloatLabeledTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASFloatLabeledTextField.h; path = Views/ASFloatLabeledTextField.h; sourceTree = "<group>"; };
+		6D31E4081A318D0800077A33 /* ASFloatLabeledTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASFloatLabeledTextField.m; path = Views/ASFloatLabeledTextField.m; sourceTree = "<group>"; };
 		AD53293E93436F7B2F441F74 /* libPods-Assetee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Assetee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -197,6 +200,8 @@
 			children = (
 				6D31E3FB1A316A5B00077A33 /* ASRentListCell.h */,
 				6D31E3FC1A316A5B00077A33 /* ASRentListCell.m */,
+				6D31E4071A318D0800077A33 /* ASFloatLabeledTextField.h */,
+				6D31E4081A318D0800077A33 /* ASFloatLabeledTextField.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -354,6 +359,7 @@
 				6D31E3F61A315DFE00077A33 /* ASAssetManager.m in Sources */,
 				6D31E3F91A31604600077A33 /* AVOSCloudInitializer.m in Sources */,
 				6D31E3E71A314BC300077A33 /* UINavigationBarCustomizeInitializer.m in Sources */,
+				6D31E4091A318D0800077A33 /* ASFloatLabeledTextField.m in Sources */,
 				6D31E3C01A31420C00077A33 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

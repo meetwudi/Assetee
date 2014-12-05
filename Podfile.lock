@@ -1,10 +1,13 @@
 PODS:
   - AVOSCloud (2.6.7)
+  - JVFloatLabeledTextField (0.0.9)
 
 DEPENDENCIES:
   - AVOSCloud
+  - JVFloatLabeledTextField
 
 SPEC CHECKSUMS:
   AVOSCloud: b9b7123e576d9d4a30d912e52a100a2561f841dd
+  JVFloatLabeledTextField: b6c7d824d231b3c01d14692feada878808480af8
 
 COCOAPODS: 0.35.0

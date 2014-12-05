@@ -7,8 +7,11 @@
 //
 
 #import "ASAddAssetFillInfoViewController.h"
+#import <JVFloatLabeledTextField/JVFloatLabeledTextField.h>
 
 @interface ASAddAssetFillInfoViewController ()
+@property (weak, nonatomic) IBOutlet JVFloatLabeledTextField *nameInput;
+
 
 @end
 
@@ -16,8 +19,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    [self setupNameInput];
+}
+
+- (void)setupNameInput {
+    self.nameInput.floatingLabelTextColor = [UIColor blackColor];
+    self.nameInput.floatingLabelYPadding = -2.0;
+    [self.nameInput setPlaceholder:@"资产名称"];
 }
 
 - (void)didReceiveMemoryWarning {

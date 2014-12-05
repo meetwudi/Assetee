@@ -215,7 +215,7 @@
         <!--资产入库-->
         <scene sceneID="GHr-sH-97v">
             <objects>
-                <viewController id="WdL-Xw-vYk" customClass="ASAddAssetFillInfoViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="WdL-Xw-vYk" customClass="ASAddAssetFillInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xdh-jM-RpG"/>
                         <viewControllerLayoutGuide type="bottom" id="onU-Ce-CaH"/>
@@ -223,7 +223,22 @@
                     <view key="view" contentMode="scaleToFill" id="zca-4M-sha">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kAW-mu-DtG" customClass="ASFloatLabeledTextField">
+                                <rect key="frame" x="16" y="80" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uKq-zi-PzI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kAW-mu-DtG" secondAttribute="trailing" id="3ai-F5-bTD"/>
+                            <constraint firstItem="kAW-mu-DtG" firstAttribute="leading" secondItem="zca-4M-sha" secondAttribute="leadingMargin" id="Pyw-i9-vtE"/>
+                            <constraint firstItem="kAW-mu-DtG" firstAttribute="top" secondItem="xdh-jM-RpG" secondAttribute="bottom" constant="16" id="tOz-9h-XQZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="资产入库" id="icZ-KZ-tOH">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="cbY-ka-R8I">
@@ -233,6 +248,9 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="9GF-em-q0j"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameInput" destination="kAW-mu-DtG" id="d0R-nJ-qcV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OS2-hi-MjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -3,6 +3,7 @@
 
 target 'Assetee' do
  pod 'AVOSCloud'
+ pod 'JVFloatLabeledTextField'
 end
 
 target 'AsseteeTests' do
