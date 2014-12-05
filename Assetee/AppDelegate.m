@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UINavigationBarCustomizeInitializer.h"
+#import "AVOSCloudInitializer.h"
 
 @interface AppDelegate ()
 
@@ -18,6 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [UINavigationBarCustomizeInitializer execute];
+    [AVOSCloudInitializer execute];
     return YES;
 }
 

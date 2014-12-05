@@ -15,6 +15,10 @@
 		6D31E3DA1A31420C00077A33 /* AsseteeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3D91A31420C00077A33 /* AsseteeTests.m */; };
 		6D31E3E71A314BC300077A33 /* UINavigationBarCustomizeInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3E61A314BC300077A33 /* UINavigationBarCustomizeInitializer.m */; };
 		6D31E3F21A315B5C00077A33 /* ASRentListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3F11A315B5C00077A33 /* ASRentListViewController.m */; };
+		6D31E3F61A315DFE00077A33 /* ASAssetManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3F51A315DFE00077A33 /* ASAssetManager.m */; };
+		6D31E3F91A31604600077A33 /* AVOSCloudInitializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3F81A31604600077A33 /* AVOSCloudInitializer.m */; };
+		6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3FC1A316A5B00077A33 /* ASRentListCell.m */; };
+		6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */; };
 		C288C28CAC2456F22E79DB49 /* libPods-Assetee.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD53293E93436F7B2F441F74 /* libPods-Assetee.a */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +50,14 @@
 		6D31E3E61A314BC300077A33 /* UINavigationBarCustomizeInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UINavigationBarCustomizeInitializer.m; path = Initializers/UINavigationBarCustomizeInitializer.m; sourceTree = "<group>"; };
 		6D31E3F01A315B5C00077A33 /* ASRentListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASRentListViewController.h; path = Controllers/ASRentListViewController.h; sourceTree = "<group>"; };
 		6D31E3F11A315B5C00077A33 /* ASRentListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASRentListViewController.m; path = Controllers/ASRentListViewController.m; sourceTree = "<group>"; };
+		6D31E3F41A315DFE00077A33 /* ASAssetManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASAssetManager.h; path = Models/ASAssetManager.h; sourceTree = "<group>"; };
+		6D31E3F51A315DFE00077A33 /* ASAssetManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASAssetManager.m; path = Models/ASAssetManager.m; sourceTree = "<group>"; };
+		6D31E3F71A31604600077A33 /* AVOSCloudInitializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AVOSCloudInitializer.h; path = Initializers/AVOSCloudInitializer.h; sourceTree = "<group>"; };
+		6D31E3F81A31604600077A33 /* AVOSCloudInitializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AVOSCloudInitializer.m; path = Initializers/AVOSCloudInitializer.m; sourceTree = "<group>"; };
+		6D31E3FB1A316A5B00077A33 /* ASRentListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASRentListCell.h; path = Views/ASRentListCell.h; sourceTree = "<group>"; };
+		6D31E3FC1A316A5B00077A33 /* ASRentListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASRentListCell.m; path = Views/ASRentListCell.m; sourceTree = "<group>"; };
+		6D31E3FE1A316EAA00077A33 /* ASDateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ASDateFormatter.h; path = Models/ASDateFormatter.h; sourceTree = "<group>"; };
+		6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ASDateFormatter.m; path = Models/ASDateFormatter.m; sourceTree = "<group>"; };
 		AD53293E93436F7B2F441F74 /* libPods-Assetee.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Assetee.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,6 +111,8 @@
 		6D31E3BC1A31420C00077A33 /* Assetee */ = {
 			isa = PBXGroup;
 			children = (
+				6D31E3FA1A316A1900077A33 /* Views */,
+				6D31E3F31A315DD200077A33 /* Models */,
 				6D31E3EF1A315B4700077A33 /* Controllers */,
 				6D31E3E41A314B8700077A33 /* Initializers */,
 				6D31E3C71A31420C00077A33 /* Main.storyboard */,
@@ -142,6 +156,8 @@
 			children = (
 				6D31E3E51A314BC300077A33 /* UINavigationBarCustomizeInitializer.h */,
 				6D31E3E61A314BC300077A33 /* UINavigationBarCustomizeInitializer.m */,
+				6D31E3F71A31604600077A33 /* AVOSCloudInitializer.h */,
+				6D31E3F81A31604600077A33 /* AVOSCloudInitializer.m */,
 			);
 			name = Initializers;
 			sourceTree = "<group>";
@@ -153,6 +169,26 @@
 				6D31E3F11A315B5C00077A33 /* ASRentListViewController.m */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		6D31E3F31A315DD200077A33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6D31E3F41A315DFE00077A33 /* ASAssetManager.h */,
+				6D31E3F51A315DFE00077A33 /* ASAssetManager.m */,
+				6D31E3FE1A316EAA00077A33 /* ASDateFormatter.h */,
+				6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		6D31E3FA1A316A1900077A33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6D31E3FB1A316A5B00077A33 /* ASRentListCell.h */,
+				6D31E3FC1A316A5B00077A33 /* ASRentListCell.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 		7AAD5840FC5BFDDE4AC33A06 /* Pods */ = {
@@ -301,6 +337,10 @@
 			files = (
 				6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */,
 				6D31E3F21A315B5C00077A33 /* ASRentListViewController.m in Sources */,
+				6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */,
+				6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */,
+				6D31E3F61A315DFE00077A33 /* ASAssetManager.m in Sources */,
+				6D31E3F91A31604600077A33 /* AVOSCloudInitializer.m in Sources */,
 				6D31E3E71A314BC300077A33 /* UINavigationBarCustomizeInitializer.m in Sources */,
 				6D31E3C01A31420C00077A33 /* main.m in Sources */,
 			);
