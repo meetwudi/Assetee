@@ -8,7 +8,7 @@
 
 #import "ASOperateAssetScanViewController.h"
 #import "ASAssetManager.h"
-#import "ASReturnAssetConfirmViewController.h"
+#import "ASOperateViewController.h"
 #import <AVOSCloud/AVOSCloud.h>
 
 @interface ASOperateAssetScanViewController ()
@@ -59,15 +59,9 @@
 
 #pragma mark - segue
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString: @"Renter Information"]) {
-        // rent
-    }
-    else if ([segue.identifier isEqualToString: @"Confirm Return"]) {
-        // return
-        if ([segue.destinationViewController isKindOfClass:[ASReturnAssetConfirmViewController class]]) {
-            ASReturnAssetConfirmViewController *dst = (ASReturnAssetConfirmViewController*)segue.destinationViewController;
-            dst.asset = self.asset;
-        }
+    if ([segue.identifier isEqualToString: @"Renter Information"] || [segue.identifier isEqualToString: @"Confirm Return"]) {
+        ASOperateViewController *dst = (ASOperateViewController*)segue.destinationViewController;
+        dst.asset = self.asset;
     }
     
 }

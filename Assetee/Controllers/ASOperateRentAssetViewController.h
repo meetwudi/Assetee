@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 吴迪（子回）. All rights reserved.
 //
 
-#import "ASBaseViewController.h"
+#import "ASOperateViewController.h"
 
-@interface ASRentAssetFillInfoViewController : ASBaseViewController
+@interface ASOperateRentAssetViewController : ASOperateViewController
 
 @end

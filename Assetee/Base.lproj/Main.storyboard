@@ -209,7 +209,7 @@
         <!--资产借出-->
         <scene sceneID="Mb9-9L-YVj">
             <objects>
-                <viewController id="KND-ac-p7e" customClass="ASRentAssetFillInfoViewController" sceneMemberID="viewController">
+                <viewController id="KND-ac-p7e" customClass="ASOperateRentAssetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oVF-ql-zqL"/>
                         <viewControllerLayoutGuide type="bottom" id="hEp-RG-Fro"/>
@@ -217,11 +217,57 @@
                     <view key="view" contentMode="scaleToFill" id="pjO-nW-otq">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nXN-ud-9Xz" customClass="ASFloatLabeledTextField">
+                                <rect key="frame" x="16" y="136" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="S6k-Fq-wuk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PpR-w7-npY" customClass="ASFloatLabeledTextField">
+                                <rect key="frame" x="16" y="182" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vcj-iC-3B7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JnV-6N-5Wu" customClass="ASFloatLabeledTextField">
+                                <rect key="frame" x="16" y="90" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="871-3P-wmx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nXN-ud-9Xz" firstAttribute="top" secondItem="JnV-6N-5Wu" secondAttribute="bottom" constant="16" id="8FW-u9-ljs"/>
+                            <constraint firstItem="JnV-6N-5Wu" firstAttribute="trailing" secondItem="pjO-nW-otq" secondAttribute="trailingMargin" id="EA1-JE-uri"/>
+                            <constraint firstItem="PpR-w7-npY" firstAttribute="top" secondItem="nXN-ud-9Xz" secondAttribute="bottom" constant="16" id="EaR-NS-heP"/>
+                            <constraint firstItem="JnV-6N-5Wu" firstAttribute="leading" secondItem="pjO-nW-otq" secondAttribute="leadingMargin" id="ZvR-pD-hZU"/>
+                            <constraint firstItem="PpR-w7-npY" firstAttribute="leading" secondItem="pjO-nW-otq" secondAttribute="leadingMargin" id="cyJ-fO-FbG"/>
+                            <constraint firstItem="nXN-ud-9Xz" firstAttribute="trailing" secondItem="pjO-nW-otq" secondAttribute="trailingMargin" id="l7k-U4-c9W"/>
+                            <constraint firstItem="PpR-w7-npY" firstAttribute="trailing" secondItem="pjO-nW-otq" secondAttribute="trailingMargin" id="r1T-Fr-t0T"/>
+                            <constraint firstItem="nXN-ud-9Xz" firstAttribute="leading" secondItem="pjO-nW-otq" secondAttribute="leadingMargin" id="tMX-wx-gzO"/>
+                            <constraint firstItem="JnV-6N-5Wu" firstAttribute="top" secondItem="oVF-ql-zqL" secondAttribute="bottom" constant="26" id="zGY-hR-t4B"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="资产借出" id="zhh-ph-tXg">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kVh-zK-Sw0"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kVh-zK-Sw0">
+                            <connections>
+                                <action selector="save:" destination="KND-ac-p7e" id="wTs-33-et5"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="nameInput" destination="JnV-6N-5Wu" id="sZt-3S-xEJ"/>
+                        <outlet property="renterNameInput" destination="nXN-ud-9Xz" id="zPE-zj-qeC"/>
+                        <outlet property="renterPhoneInput" destination="PpR-w7-npY" id="oOf-cZ-90b"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8wn-uZ-L9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -230,7 +276,7 @@
         <!--资产归还-->
         <scene sceneID="mNy-mz-Ffp">
             <objects>
-                <viewController id="044-yd-bwl" customClass="ASReturnAssetConfirmViewController" sceneMemberID="viewController">
+                <viewController id="044-yd-bwl" customClass="ASOperateReturnAssetViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qhV-np-9lV"/>
                         <viewControllerLayoutGuide type="bottom" id="qj7-v7-L5o"/>
@@ -263,6 +309,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="您即将归还上述资产，请确认个人信息准确" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xn1-Pb-ulh">
+                                <rect key="frame" x="165.5" y="245" width="270" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="270" id="AQl-ZB-OVu"/>
+                                    <constraint firstAttribute="height" constant="21" id="AoB-2A-Fur"/>
+                                    <constraint firstAttribute="height" constant="21" id="bJJ-Gs-u1h"/>
+                                    <constraint firstAttribute="width" constant="323" id="x9Y-L6-V1Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.066666666669999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bJJ-Gs-u1h"/>
+                                        <exclude reference="x9Y-L6-V1Y"/>
+                                    </mask>
+                                </variation>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -270,8 +334,10 @@
                             <constraint firstItem="LrZ-9h-m6H" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="61r-nn-2Vo"/>
                             <constraint firstItem="LrZ-9h-m6H" firstAttribute="top" secondItem="KQc-1M-aQi" secondAttribute="bottom" constant="16" id="7yR-80-avv"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="88G-mn-dz1"/>
+                            <constraint firstAttribute="centerX" secondItem="Xn1-Pb-ulh" secondAttribute="centerX" constant="-0.5" id="9mu-WK-dXj"/>
                             <constraint firstItem="zLB-c9-yUR" firstAttribute="top" secondItem="LrZ-9h-m6H" secondAttribute="bottom" constant="16" id="DhY-jd-6Ix"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="trailing" secondItem="ffY-kx-tKw" secondAttribute="trailingMargin" id="MRn-Zx-cJl"/>
+                            <constraint firstItem="Xn1-Pb-ulh" firstAttribute="top" secondItem="zLB-c9-yUR" secondAttribute="bottom" constant="43" id="SPi-KY-gAV"/>
                             <constraint firstItem="LrZ-9h-m6H" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="WkX-UF-8Du"/>
                             <constraint firstItem="zLB-c9-yUR" firstAttribute="leading" secondItem="ffY-kx-tKw" secondAttribute="leadingMargin" id="q8S-fw-mXW"/>
                             <constraint firstItem="KQc-1M-aQi" firstAttribute="top" secondItem="qhV-np-9lV" secondAttribute="bottom" constant="16" id="tsf-eH-6rL"/>
@@ -279,13 +345,17 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="资产归还" id="Wg2-96-ioH">
-                        <barButtonItem key="rightBarButtonItem" title="确认归还" id="waI-IP-QXN"/>
+                        <barButtonItem key="rightBarButtonItem" title="确认归还" id="waI-IP-QXN">
+                            <connections>
+                                <action selector="confirmReturn:" destination="044-yd-bwl" id="ClN-zi-cpi"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="nameInput" destination="KQc-1M-aQi" id="AxL-dk-8th"/>
-                        <outlet property="renterNameInput" destination="LrZ-9h-m6H" id="H5g-p4-qHB"/>
-                        <outlet property="renterPhoneInput" destination="zLB-c9-yUR" id="WUM-MB-rUt"/>
+                        <outlet property="nameInput" destination="KQc-1M-aQi" id="JL5-5E-t2R"/>
+                        <outlet property="renterNameInput" destination="LrZ-9h-m6H" id="0iD-wa-bmR"/>
+                        <outlet property="renterPhoneInput" destination="zLB-c9-yUR" id="gTk-F1-dDK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dWz-Vc-eCp" userLabel="First Responder" sceneMemberID="firstResponder"/>

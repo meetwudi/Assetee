@@ -45,8 +45,6 @@
     NSData *snapshotData = UIImagePNGRepresentation(snapshotImage);
     AVFile *snapshot = [AVFile fileWithData:snapshotData];
     [asset setObject:snapshot forKey:@"snapshot"];
-    // 临时的
-    [asset setObject:@YES forKey:@"rented"];
     [asset saveInBackgroundWithBlock:complete];
 }
 
@@ -60,8 +58,7 @@
             return;
         }
         AVObject *asset = [objects objectAtIndex:0];
-        BOOL rented = [asset valueForKey:@"rented"];
-        if (rented) {
+        if ([[asset valueForKey:@"rented"] isEqualToValue:@YES]) {
             complete(ASAssetStateRented, asset);
         }
         else {

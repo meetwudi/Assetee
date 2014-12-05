@@ -6,10 +6,9 @@
 //  Copyright (c) 2014 吴迪（子回）. All rights reserved.
 //
 
-#import "ASBaseViewController.h"
+#import "ASOperateViewController.h"
 
-@class AVObject;
 
-@interface ASReturnAssetConfirmViewController : ASBaseViewController    
-@property (nonatomic) AVObject *asset;
+@interface ASOperateReturnAssetViewController : ASOperateViewController   
+
 @end

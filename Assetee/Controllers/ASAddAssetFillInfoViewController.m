@@ -51,6 +51,10 @@
     [self addOverlayView];
     // dismiss keyboard
     [self.view endEditing:YES];
+    
+    [assetManager getAssetWithBarCodeId:self.barCodeId complete:^(ASAssetState state, AVObject *asset) {
+        
+    }];
     [assetManager createAssetWithName:self.nameInput.text barCodeId:self.barCodeId snapshotImage:self.snapshotImage complete:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"%@", error);
