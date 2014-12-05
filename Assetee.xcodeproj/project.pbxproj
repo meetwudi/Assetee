@@ -81,8 +81,6 @@
 		6D31E3BC1A31420C00077A33 /* Assetee */ = {
 			isa = PBXGroup;
 			children = (
-				6D31E3C11A31420C00077A33 /* AppDelegate.h */,
-				6D31E3C21A31420C00077A33 /* AppDelegate.m */,
 				6D31E3C41A31420C00077A33 /* ViewController.h */,
 				6D31E3C51A31420C00077A33 /* ViewController.m */,
 				6D31E3C71A31420C00077A33 /* Main.storyboard */,
@@ -96,6 +94,8 @@
 		6D31E3BD1A31420C00077A33 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6D31E3C11A31420C00077A33 /* AppDelegate.h */,
+				6D31E3C21A31420C00077A33 /* AppDelegate.m */,
 				6D31E3BE1A31420C00077A33 /* Info.plist */,
 				6D31E3BF1A31420C00077A33 /* main.m */,
 			);

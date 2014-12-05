@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HhQ-bl-vRk">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Assetee-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -17,9 +17,165 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Assetee" id="nyU-2u-MHZ">
+                        <barButtonItem key="leftBarButtonItem" image="ico-scan" id="eyW-Tc-Rv3">
+                            <connections>
+                                <segue destination="aWk-bt-yIK" kind="presentation" id="34a-JP-Ogd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="BD5-03-qJL">
+                            <connections>
+                                <segue destination="Ogt-op-KD9" kind="presentation" id="0X4-HT-VB5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1192" y="337"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oKY-kU-iRw">
+            <objects>
+                <navigationController id="Ogt-op-KD9" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p0B-7D-Lxl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="GAG-jR-NBg" kind="relationship" relationship="rootViewController" id="kL5-Ic-tjr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cpw-gf-bYS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1998" y="-204"/>
+        </scene>
+        <!--资产入库-->
+        <scene sceneID="N8Z-hz-aW3">
+            <objects>
+                <viewController id="GAG-jR-NBg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyr-SQ-kkJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="bMO-E4-67v"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xC2-bd-C6r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="资产入库" id="19s-IM-uOx">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="gZJ-x9-ljd"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="WdL-Xw-vYk" kind="push" id="BPW-nL-AbL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bKJ-r9-ebb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2698" y="-204"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B7Y-Ot-tpr">
+            <objects>
+                <navigationController id="aWk-bt-yIK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="7Ur-2H-ft5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="7Om-AY-01q" kind="relationship" relationship="rootViewController" id="VUz-tj-jsC"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LrR-Op-Aw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="752"/>
+        </scene>
+        <!--资产借出或归还-->
+        <scene sceneID="685-nw-WzA">
+            <objects>
+                <viewController id="7Om-AY-01q" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XIA-fs-mfL"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSz-7U-0b9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IkH-Xc-7TR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="资产借出或归还" id="pMI-M6-sFF">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Xgq-TK-VpD"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="KND-ac-p7e" kind="push" id="gBk-Iv-FOa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zhd-GR-aOM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2706" y="755"/>
+        </scene>
+        <!--资产借出-->
+        <scene sceneID="Mb9-9L-YVj">
+            <objects>
+                <viewController id="KND-ac-p7e" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oVF-ql-zqL"/>
+                        <viewControllerLayoutGuide type="bottom" id="hEp-RG-Fro"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pjO-nW-otq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="资产借出" id="zhh-ph-tXg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="kVh-zK-Sw0"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8wn-uZ-L9y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3396" y="752"/>
+        </scene>
+        <!--资产入库-->
+        <scene sceneID="GHr-sH-97v">
+            <objects>
+                <viewController id="WdL-Xw-vYk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xdh-jM-RpG"/>
+                        <viewControllerLayoutGuide type="bottom" id="onU-Ce-CaH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="zca-4M-sha">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="资产入库" id="icZ-KZ-tOH">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="9GF-em-q0j"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OS2-hi-MjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3481" y="-204"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="0JK-4A-mug">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="HhQ-bl-vRk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dy5-hJ-XhQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="pXr-pA-oo5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpV-X7-4Y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="341" y="337"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ico-scan" width="20" height="17"/>
+    </resources>
 </document>
