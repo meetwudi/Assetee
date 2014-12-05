@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ASRentListViewController.h
 //  Assetee
 //
 //  Created by Wu Di on 12/5/14.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ASRentListViewController : UIViewController 
 
 @end
-
