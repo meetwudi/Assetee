@@ -21,16 +21,15 @@
 
 @synthesize rentItems = _rentItems;
 
+
+#pragma mark - View Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // Fetch rentItems from server
-    __weak ASRentListViewController *weakSelf = self;
-    ASAssetManager *rentItemsManager = [ASAssetManager sharedManager];
-    [rentItemsManager fetchRentItemsWithComplete:^(NSArray *items) {
-        weakSelf.rentItems = items;
-    }];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self reloadData];
 }
 
 
@@ -39,6 +38,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Getter & Setter
 -(NSArray *)rentItems {
     if (!_rentItems) {
         _rentItems = [NSArray array];
@@ -51,7 +51,19 @@
     [self.tableView reloadData];
 }
 
+#pragma mark - Data
 
+- (void) reloadData {
+    // Fetch rentItems from server
+    __weak ASRentListViewController *weakSelf = self;
+    ASAssetManager *rentItemsManager = [ASAssetManager sharedManager];
+    [rentItemsManager fetchRentItemsWithComplete:^(NSArray *items) {
+        weakSelf.rentItems = items;
+    }];
+}
+
+
+#pragma mark - Tableview delegate & datasource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return [self.rentItems count];
 }
