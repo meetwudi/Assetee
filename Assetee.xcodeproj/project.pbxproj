@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2097F5441A32F9F5004D68A8 /* AsseteeModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2097F5421A32F9F5004D68A8 /* AsseteeModel.xcdatamodeld */; };
+		2097F5461A32FA04004D68A8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2097F5451A32FA04004D68A8 /* CoreData.framework */; };
+		2097F5491A32FBF5004D68A8 /* Asset.m in Sources */ = {isa = PBXBuildFile; fileRef = 2097F5481A32FBF5004D68A8 /* Asset.m */; };
+		2097F54C1A32FCD6004D68A8 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2097F54B1A32FCD6004D68A8 /* CoreDataManager.m */; };
 		6D31E3C01A31420C00077A33 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3BF1A31420C00077A33 /* main.m */; };
 		6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D31E3C21A31420C00077A33 /* AppDelegate.m */; };
 		6D31E3C91A31420C00077A33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D31E3C71A31420C00077A33 /* Main.storyboard */; };
@@ -42,6 +46,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2097F5431A32F9F5004D68A8 /* AsseteeModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AsseteeModel.xcdatamodel; sourceTree = "<group>"; };
+		2097F5451A32FA04004D68A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2097F5471A32FBF5004D68A8 /* Asset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Asset.h; path = Models/Asset.h; sourceTree = "<group>"; };
+		2097F5481A32FBF5004D68A8 /* Asset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Asset.m; path = Models/Asset.m; sourceTree = "<group>"; };
+		2097F54A1A32FCD6004D68A8 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CoreDataManager.h; path = Models/CoreDataManager.h; sourceTree = "<group>"; };
+		2097F54B1A32FCD6004D68A8 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CoreDataManager.m; path = Models/CoreDataManager.m; sourceTree = "<group>"; };
 		3BD6D50B6A1A46D72F80D92A /* Pods-Assetee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assetee.release.xcconfig"; path = "Pods/Target Support Files/Pods-Assetee/Pods-Assetee.release.xcconfig"; sourceTree = "<group>"; };
 		51E1FC83CA4FC5E368EE740B /* Pods-Assetee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Assetee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Assetee/Pods-Assetee.debug.xcconfig"; sourceTree = "<group>"; };
 		6D31E3BA1A31420C00077A33 /* Assetee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assetee.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2097F5461A32FA04004D68A8 /* CoreData.framework in Frameworks */,
 				C288C28CAC2456F22E79DB49 /* libPods-Assetee.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -110,6 +121,7 @@
 		240B126B034D28DDCFE9F88B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2097F5451A32FA04004D68A8 /* CoreData.framework */,
 				AD53293E93436F7B2F441F74 /* libPods-Assetee.a */,
 			);
 			name = Frameworks;
@@ -211,6 +223,11 @@
 				6D31E3F51A315DFE00077A33 /* ASAssetManager.m */,
 				6D31E3FE1A316EAA00077A33 /* ASDateFormatter.h */,
 				6D31E3FF1A316EAA00077A33 /* ASDateFormatter.m */,
+				2097F5421A32F9F5004D68A8 /* AsseteeModel.xcdatamodeld */,
+				2097F5471A32FBF5004D68A8 /* Asset.h */,
+				2097F5481A32FBF5004D68A8 /* Asset.m */,
+				2097F54A1A32FCD6004D68A8 /* CoreDataManager.h */,
+				2097F54B1A32FCD6004D68A8 /* CoreDataManager.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -398,6 +415,7 @@
 			files = (
 				6DFBBE9D1A31CD6200848A99 /* ASOperateReturnAssetViewController.m in Sources */,
 				6D31E4031A31792600077A33 /* ASAddAssetScanViewController.m in Sources */,
+				2097F54C1A32FCD6004D68A8 /* CoreDataManager.m in Sources */,
 				6D31E3C31A31420C00077A33 /* AppDelegate.m in Sources */,
 				6D31E4061A317F8500077A33 /* ASAddAssetFillInfoViewController.m in Sources */,
 				6DFBBE971A31C54800848A99 /* ASOperateAssetScanViewController.m in Sources */,
@@ -406,10 +424,12 @@
 				6D31E4001A316EAA00077A33 /* ASDateFormatter.m in Sources */,
 				6D31E3FD1A316A5B00077A33 /* ASRentListCell.m in Sources */,
 				6D31E3F61A315DFE00077A33 /* ASAssetManager.m in Sources */,
+				2097F5491A32FBF5004D68A8 /* Asset.m in Sources */,
 				6D31E3F91A31604600077A33 /* AVOSCloudInitializer.m in Sources */,
 				6D31E3E71A314BC300077A33 /* UINavigationBarCustomizeInitializer.m in Sources */,
 				6D31E4121A31C1D200077A33 /* ASScanViewController.m in Sources */,
 				6D31E4091A318D0800077A33 /* ASFloatLabeledTextField.m in Sources */,
+				2097F5441A32F9F5004D68A8 /* AsseteeModel.xcdatamodeld in Sources */,
 				6DFBBEAE1A31DF1900848A99 /* ASOperateViewController.m in Sources */,
 				6D31E3C01A31420C00077A33 /* main.m in Sources */,
 				6DFBBEA01A31D2AF00848A99 /* ASBaseViewController.m in Sources */,
@@ -619,6 +639,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2097F5421A32F9F5004D68A8 /* AsseteeModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2097F5431A32F9F5004D68A8 /* AsseteeModel.xcdatamodel */,
+			);
+			currentVersion = 2097F5431A32F9F5004D68A8 /* AsseteeModel.xcdatamodel */;
+			name = AsseteeModel.xcdatamodeld;
+			path = Models/AsseteeModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 6D31E3B21A31420C00077A33 /* Project object */;
 }

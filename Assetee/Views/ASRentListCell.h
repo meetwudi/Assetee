@@ -8,11 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@import AVOSCloud;
+
 @interface ASRentListCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rentDateLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rentInfoLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *snapshotImage;
+
+- (void)configureCellWithAVObject:(AVObject *)obj;
+- (void)configureCellWithDictionary:(NSDictionary *)dict;
 
 @end

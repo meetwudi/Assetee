@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6252" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Asset" representedClassName="Asset" syncable="YES">
+        <attribute name="barCodeId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rentDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="rented" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="renterName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="renterPhone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="snapshot" optional="YES" attributeType="Binary" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Asset" positionX="-2745" positionY="-342" width="128" height="148"/>
+    </elements>
+</model>
