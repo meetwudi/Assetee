@@ -28,25 +28,6 @@
     // Configure the view for the selected state
 }
 
-- (void)configureCellWithAVObject:(AVObject *)obj {
-    // set asset name
-    self.nameLabel.text = [obj valueForKey:@"name"];
-    // set rent date
-    NSDate *rentDate = [obj valueForKey:@"rentDate"];
-    self.rentDateLabel.text = [[ASDateFormatter zhDateFormatter] stringFromDate:rentDate];
-    // set rent info
-    self.rentInfoLabel.text = [NSString stringWithFormat:@"借出给%@，电话%@",
-                               [obj valueForKey:@"renterName"],
-                               [obj valueForKey:@"renterPhone"]];
-    AVFile *file = [obj objectForKey:@"snapshot"];
-    
-    __weak ASRentListCell *weakself = self;
-    [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-        UIImage *image = [UIImage imageWithData:data];
-        weakself.snapshotImage.image = image;
-    }];
-}
-
 - (void)configureCellWithDictionary:(NSDictionary *)dict {
     // set asset name
     self.nameLabel.text = [dict valueForKey:@"name"];

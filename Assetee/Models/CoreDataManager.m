@@ -15,7 +15,6 @@
 @implementation CoreDataManager
 
 #pragma mark - Core Data stack
-
 @synthesize managedObjectContext = _managedObjectContext;
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
@@ -93,7 +92,6 @@
 }
 
 #pragma mark - Core Data Saving support
-
 - (void)saveContext {
     NSManagedObjectContext *managedObjectContext = self.managedObjectContext;
     if (managedObjectContext != nil) {
@@ -107,6 +105,7 @@
     }
 }
 
+#pragma mark - Local data support
 - (void)writeData:(NSArray *)array {
     // 存储数据
     NSManagedObjectContext *context = [self managedObjectContext];
@@ -131,7 +130,7 @@
         for (NSManagedObject *obj in fetchedObjects) {
             [context deleteObject:obj];
         }
-        [self saveContext];
+        // [self saveContext];
     }
 }
 

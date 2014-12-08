@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *rentInfoLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *snapshotImage;
 
-- (void)configureCellWithAVObject:(AVObject *)obj;
 - (void)configureCellWithDictionary:(NSDictionary *)dict;
 
 @end

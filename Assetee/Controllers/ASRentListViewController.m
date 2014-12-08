@@ -45,7 +45,7 @@
 #pragma mark - UI
 - (void)configureTableView {
     self.refreshControl = [[UIRefreshControl alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableView.frame.size.width, 100.0f)];
-    [self.refreshControl addTarget:self action:@selector(reload:) forControlEvents:UIControlEventValueChanged];
+    [self.refreshControl addTarget:self action:@selector(refreshData:) forControlEvents:UIControlEventValueChanged];
     self.tableView.tableHeaderView = [[UIView alloc] init];
     [self.tableView.tableHeaderView addSubview:self.refreshControl];
 }
@@ -65,14 +65,21 @@
 }
 
 #pragma mark - Data
-- (void)reload:(__unused id)sender {
+- (void)refreshData:(__unused id)sender {
+    // Clear local data
     [[CoreDataManager sharedManager] clearData];
+    
+    // Fetch data from server
     __weak ASRentListViewController *weakSelf = self;
     ASAssetManager *rentItemsManager = [ASAssetManager sharedManager];
     [rentItemsManager fetchRentItemsWithComplete:^(NSArray *items) {
+        // Synchronize
         [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%f",[NSDate timeIntervalSinceReferenceDate]] forKey:@"updateDate"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        
         weakSelf.rentItems = items;
+        
+        // Write new data to local database
         [[CoreDataManager sharedManager] writeData:items];
     }];
 }
@@ -85,16 +92,15 @@
     NSString *updateDate = nil;
     if (!updateDate) {
         // The first time
-        [self reload:nil];
+        [self refreshData:nil];
     } else {
-        // Fetch data from Core Data
         NSTimeInterval update = updateDate.doubleValue;
         NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
         if ((now - update) > 3 * 60 * 60) {
             // Refresh
-            [self reload:nil];
+            [self refreshData:nil];
         } else {
-            // Read data
+            // Read local data
             self.rentItems = [[CoreDataManager sharedManager] readData];
         }
     }
@@ -109,6 +115,8 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     __block ASRentListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RentItemCell"];
     
+    // Not a good solution
+    // TODO: unify format
     id rentItem = [self.rentItems objectAtIndex:indexPath.row];
     if ([rentItem isKindOfClass:[AVObject class]]) {
         rentItem = (AVObject *)rentItem;
@@ -122,7 +130,6 @@
         [cell configureCellWithDictionary:rentItem];
     }
     
-//    [cell configureCellWithAVObject:rentItem];
     return cell;
 }
 
